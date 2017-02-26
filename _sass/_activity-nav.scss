@@ -1,0 +1,120 @@
+.activity-nav {
+    position: relative;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: -2em 0 3em 0;
+    li {
+        list-style: none;
+    }
+    &> li {
+        margin: 0;
+        padding: 0.5em;
+        line-height: 1;
+    }
+    .full-list {
+        @include clearfix;
+        display: none;
+        position: absolute;
+        z-index: 9999;
+        width: 100%;
+        max-width: 100%;
+        left: 0;
+        top: 2em;
+        background: $lightgreen;
+        background: rgba(176, 232, 220, 0.95);
+        padding: 0;
+        > li {
+            display: block;
+            padding: 0.5em 1em;
+            margin-top: 1em;
+            > a {
+                display: block;
+                padding-top: 1em;
+                padding-bottom: 1em;
+            }
+            ul {
+                padding: 0;
+                @include outer-container;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            li {
+                @include span-columns(6);
+                text-align: center;
+                margin-top: flex-gutter();
+                margin-bottom: 0;
+                background: rgba(0,0,0,0.1);
+                &:nth-child(2n) {
+                    margin-right: 0;  
+                }
+                &:nth-child(2n+1) {
+                    clear: both;
+                }
+                @media only screen and (min-width: em(640)) {
+                    @include span-columns(3);
+                    &:nth-child(2n) {
+                        margin-right: flex-gutter();  
+                    }
+                    &:nth-child(2n+1) {
+                        clear: none;
+                    }
+                    &:nth-child(4n) {
+                        margin-right: 0;  
+                    }
+                    &:nth-child(4n+1) {
+                        clear: both;
+                    }
+                }
+                &.current {
+                    box-shadow: -10px -10px $green; 
+                }
+                a {
+                    position: relative;
+                    display: block;
+                    line-height: 1.4;
+                    padding: 60% 0 0.5em 0;
+                    border: none;
+                    img {
+                        width: 100%;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+            }
+        }
+        .red {
+            color: $red;
+        }
+        .green {
+            color: $green;
+        }
+        .purple {
+            color: $purple;
+        }
+    }
+    &.in-page {
+        margin-top: 1em;
+        .full-list {
+            position: static;
+            z-index: 0;
+            display: block;
+            background: none;
+            > li {
+                padding: 0.5em 0;
+            }
+        }
+    }
+    /*&:hover {
+        transition: all 0.5s ease;
+        background: $green;
+        &> li > a {
+            color: #fff;
+        }
+        .full-list {
+            display: block;
+        }
+    }*/
+}
