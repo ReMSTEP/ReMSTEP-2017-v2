@@ -112,169 +112,18 @@ textarea {
 @import "site-header";
 @import "site-footer";
 @import "page-header";
-@import "vertical-nav";
 @import "activity-nav";
+
 
 /*** components ***/
 @import "components/buttons";
 @import "components/overview";
+@import "components/inset";
+@import "components/alert";
+@import "components/video";
+@import "components/footnotes";
+@import "components/news";
 
-
-.alert {
-    margin: 2em 0;
-    padding: 10px;
-    background: $lightgreen;
-    border-radius: 6px;
-}
-
-
-/*** video ***/
-/* http://alistapart.com/article/creating-intrinsic-ratios-for-video */
-.vid-wrapper {
-    position: relative;
-    padding-bottom: 56.25%;
-    /* 16:9 */
-    height: 0;
-}
-figure.vid-wrapper {
-    margin: 4em 0;
-    text-align: center;
-    figcaption {
-        position: absolute;
-        top: 100%;
-        margin: 10px 0;
-        width: 100%;
-    }
-}
-.vid-wrapper {
-    video, iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-}
-/* end http://alistapart.com/article/creating-intrinsic-ratios-for-video */
-
-
-.panel {
-    position: relative;
-    max-width: 360px;
-    margin: 40px auto;
-    h2 {
-        font-family: 'Lemon';
-        font-size: 1.5em;
-        text-align: center;
-        margin: 8% 0;
-    }
-    p {
-        font-size: 1em;
-        font-weight: 100;
-    }
-    .button {
-        color: $green;
-        text-decoration: none;
-        display: block;
-        margin: 0 10%;
-        border: 1px dotted $green;
-        text-align: center;
-        padding: 10px 0;
-        width: 80%;
-    }
-}
-.purple.panel {
-    .button {
-        color: $purple;
-        border: 1px dotted $purple;
-    }
-    h2 {
-        color: $purple;
-    }
-}
-.red.panel {
-    .button {
-        color: $red;
-        border: 1px dotted $red;
-    }
-    h2 {
-        color: $red;
-    }
-}
-.green.panel {
-    .button {
-        color: $green;
-        border: 1px dotted $green;
-    }
-    h2 {
-        color: $green;
-    }
-}
-@media only screen and (min-width: em(768)) {
-    .panels {
-        display: flex;
-    }
-    .panel {
-        margin: 40px 20px 40px 0;
-        color: #fff;
-        p {
-            margin: 0 10% 25% 10%;
-        }
-        .button {
-            position: absolute;
-            bottom: 1em;
-        }
-    }
-    .purple.panel {
-        background: $purple;
-        .button {
-            color: #fff;
-            border: 1px dotted #fff;
-        }
-        h2 {
-            color: #fff;
-        }
-    }
-    .red.panel {
-        background: $red;
-        .button {
-            color: #fff;
-            border: 1px dotted #fff;
-        }
-        h2 {
-            color: #fff;
-        }
-    }
-    .green.panel {
-        background: $green;
-        .button {
-            color: #fff;
-            border: 1px dotted #fff;
-        }
-        h2 {
-            color: #fff;
-        }
-    }
-    .panel:nth-child(3n) {
-        margin-right: 0;
-    }
-}
-
-.footnotes {
-    background: #f9f9f9;
-    min-height: 99px;
-    padding: 2em 0;
-    margin-top: 4em;
-    h2 {
-        margin: 0;
-        font-size: 1em;
-        color: #ccc;
-    }
-    li {
-        font-size: 0.75em;
-        font-weight: 300;
-    }
-}
 
 aside{
     &.right {
@@ -493,43 +342,7 @@ ul.tablist {
     }
 }
 
-/*** news panels ***/
-.article {
-    border: 1px solid #eee;
-    border-radius: 3px;
-    padding: 0 10px;
-    margin: 1em 20px 2em 0px;
-    h3 {
-        font-size: 1em;
-    }
-    h4 {
-        font-size: 12/16*1em;
-        color: #999;
-    }
-    p {
-        font-size: 14/16*1em;
-    }
-}
-@media only screen and (min-width: em(400)) {
-    .one-quarter {
-        width: 50%;
-        float: left;
-        &:nth-child(2n+1) {
-            clear: left;
-        }
-    }
-}
-@media only screen and (min-width: em(900)) {
-    .one-quarter {
-        width: 25%;
-        &:nth-child(2n+1) {
-            clear: none;
-        }
-        &:nth-child(4n+1) {
-            clear: left;
-        }
-    }
-}
+
 
 .info-box-wrapper {
     position: fixed;

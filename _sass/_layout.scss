@@ -1,7 +1,18 @@
 .container {
+    @include outer-container;
     margin: 0 auto;
     padding: 0 10px;
     max-width: 1140px;
+    &.medium {
+        max-width: 1000px;
+    }
+    &.narrow {
+        max-width: 835px;
+    }
+    &.flex {
+        display: flex;
+        flex-wrap: wrap;
+    }
     .container {
         padding: 0;
     }
@@ -21,7 +32,7 @@
 .span5 {
     @include span-columns(5);
 }
-.span6 {
+.span6, .half {
     @include span-columns(6);
 }
 .span7 {
@@ -41,4 +52,48 @@
 }
 .span12 {
     @include span-columns(12);
+}
+.breathing {
+    padding: 4em 0;
+}
+/*** news panels ***/
+.three-max.container {
+    display: flex;
+    flex-wrap: wrap;
+    >div {
+        border: 1px solid #eee;
+        border-radius: 3px;
+        padding: 0 10px;
+        margin-top: 1em;
+        margin-bottom: 2em;
+    
+        @media only screen and (min-width: em(400)) {
+
+            @include span-columns(6);
+            &:nth-child(2n) {
+                margin-right: 0;
+            }
+            &:nth-child(2n+1) {
+                clear: left;
+            }
+
+        }
+        @media only screen and (min-width: em(900)) {
+
+            @include span-columns(4);
+            &:nth-child(2n) {
+                margin-right: flex-gutter();
+            }
+            &:nth-child(2n+1) {
+                clear: none;
+            }
+            &:nth-child(3n) {
+                margin-right: 0;
+            }
+            &:nth-child(3n+1) {
+                clear: left;
+            }
+
+        }
+    }
 }
