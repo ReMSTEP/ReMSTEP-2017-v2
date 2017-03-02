@@ -35,6 +35,10 @@ a.remstep-logo {
 }
 .main-nav {
     display: none;
+    ul {
+        margin: 1em 0;
+        padding: 0 0 0 20px;
+    }
     ul,
     li {
         list-style: none;
@@ -45,6 +49,7 @@ a.remstep-logo {
     li {
         display: inline-block;
         margin: 10px 20px 0 0;
+        padding-left: 0;
         font-size: 1.2em;
     }
     a {
