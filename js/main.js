@@ -159,9 +159,10 @@ $(document).ready(function () {
     });
 
     /* info box show/hide */
-    $('.info.button').click(function (event) {
+    $('.info').click(function (event) {
         event.preventDefault();
-        $(this).next().toggleClass('open');
+        var infoBoxId = $(this).attr('data-infoBoxId');
+        $('#'+infoBoxId).addClass('open');
     });
     $('.info-box-wrapper').click(function () {
         $(this).removeClass('open');

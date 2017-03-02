@@ -1,0 +1,43 @@
+.info-box-wrapper {
+    position: fixed;
+    top: 0;
+    left:0;
+    bottom:0;
+    right: 0;
+    background-color: rgba(0, 0, 0, .75);
+    z-index: 1001;
+    overflow-y: scroll;
+    
+    display: none;
+    opacity: 0;
+    transition: opacity 5s ease 2s;
+    &.open {
+        display: flex;
+        opacity: 1;
+    }
+}
+.info-box {
+    text-align: left;
+    position: relative;
+    font-size: 80%;
+    margin: auto;
+    width: 100%;
+    max-width: 600px;
+    background: #eaeae0;
+    padding: 30px 40px 40px 40px;
+    box-shadow: -10px -10px $lightgreen;
+    &:after {
+        content: "\f00d";
+        font-family: FontAwesome;
+        font-size: 200%;
+        color: $green;
+        margin-bottom: -10px;
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        cursor: pointer;
+    }
+    h2 {
+        margin-top: 0;
+    }
+}

@@ -1,0 +1,45 @@
+aside{
+    &.right {
+        width: 25%;
+        min-width: 250px;
+        clear: right;
+        float: right;
+        margin: 0 0 20px 40px;
+    }
+    &.well {
+        padding: 0 10px;
+        border: 1px solid #eee;
+        border-radius: 2px;
+        header {
+            background: $purple;
+            margin-top: 0.5em;
+        }
+        h2 {
+            color: white;
+        }
+    }
+    header {
+        padding: 10px;
+    }
+    h2 {
+        color: #222;
+        font-size: 0.75em;
+        font-weight: 500;
+        margin: 0;
+        padding: 5px 0;
+        text-align: center;
+    }
+    ul {
+        margin-top: 0.5em;
+        padding-left: 20px;
+    }
+    p,
+    li {
+        font-size: 0.75em;
+        font-weight: 500;
+    }
+    .button {
+        color: #fff;
+        border: 1px dotted #fff;
+    }
+}
