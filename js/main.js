@@ -50,15 +50,17 @@ $(document).ready(function () {
         }
 
         // fix on this page menu when scrolls up
-        if (viewportWidth > 600) {
-            if (scrollTop >= (onThisPagePosition.top - headerHeight * 0.7)) {
-                $('.on-this-page').addClass('fixed');
-                $('.on-this-page').css('top', headerHeight);
-            } else {
-                $('.on-this-page').removeClass('fixed');
-                $('.on-this-page').css('top', 'auto');
-            }
-        }
+        if($('.on-this-page').length > 0){
+			if (viewportWidth > 600) {
+				if (scrollTop >= (onThisPagePosition.top - headerHeight * 0.7)) {
+					$('.on-this-page').addClass('fixed');
+					$('.on-this-page').css('top', headerHeight);
+				} else {
+					$('.on-this-page').removeClass('fixed');
+					$('.on-this-page').css('top', 'auto');
+				}
+			}
+		}
     });
 
     //smooth scroll
