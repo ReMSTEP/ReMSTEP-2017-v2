@@ -1,7 +1,7 @@
 /*** typography ***/
 
 body {
-    font-family: 'Roboto', 'HelveticaNeue-UltraLight', 'Helvetica Neue UltraLight', 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
     font-weight: 300;
 }
 h1 {
@@ -153,14 +153,14 @@ blockquote {
             margin-right: 0.25em;
             margin-left: -0.6em;
             vertical-align: -0.4em;
-            font-family: impact;
+            font-family: impact, sans-serif;
             opacity: 0.3;
         }
         
         &:after {
             content: close-quote;
             color: $purple;
-            font-family: helvetica;
+            font-family: helvetica, sans-serif;
         }
     }
     footer {
