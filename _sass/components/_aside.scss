@@ -1,10 +1,12 @@
 aside{
     &.right {
-        width: 25%;
-        min-width: 250px;
-        clear: right;
-        float: right;
-        margin: 0 0 20px 40px;
+        @media only screen and (min-width: em(500)) {
+           width: 25%;
+            min-width: 250px;
+            clear: right;
+            float: right;
+            margin: 0 0 20px 40px;
+        }
     }
     &.well {
         padding: 0 10px;

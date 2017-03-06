@@ -1,0 +1,5 @@
+.hideonmobile {
+    @media only screen and (max-width: em(600)) {
+        display: none;
+    }
+}
