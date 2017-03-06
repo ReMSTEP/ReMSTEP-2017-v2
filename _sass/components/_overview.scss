@@ -41,14 +41,38 @@
         }
     }
 }
+.innovation-callout {
+    span {
+        display: inline-block;
+        background: #e84b3c;
+        text-align: center;
+        width: 3em;
+        height: 3em;
+        border-radius: 1.5em;
+        line-height: 3em;
+        margin: 0 0 0 -1.5em;
+        color: #fff; 
+    }
+    p {
+        font-size: 0.875em;
+        border: 2px solid #f8c9c5;
+        background: #fff;
+        border-radius: 3px;
+        margin: -1.5em 0 2em 0;
+        padding: 1.5em;
+    }
+}
 .innovation-list {
     width: 100%;
-    p {
+    header p {
         margin-top: 0;
     }
     @media only screen and (min-width: em(900)) {
         .innovation-callout {
             @include span-columns(4);
+            p {
+                margin: -1.5em 1.5em 2em 0;
+            }
         }
     }
 }
