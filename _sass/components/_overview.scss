@@ -53,10 +53,14 @@
     }
 }
 .key-points {
+    background: #FBDCDA;
     width: 100%;
     h2 {
         font-size: 1.6em;
         margin: 0;
+    }
+    ul {
+        margin-left: 0;
     }
 }
 @media only screen and (min-width: em(600)) {
