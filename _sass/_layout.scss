@@ -29,14 +29,18 @@
 .span4 {
     @include span-columns(4);
 }
-.span5 {
-    @include span-columns(5);
-}
-.span6, .half {
-    @include span-columns(6);
-}
-.span7 {
-    @include span-columns(7);
+@media only screen and (min-width: em(600)) {
+    .span5 {
+        @include span-columns(5);
+    }
+    .span6, .half {
+
+            @include span-columns(6);
+
+    }
+    .span7 {
+        @include span-columns(7);
+    }
 }
 .span8 {
     @include span-columns(8);

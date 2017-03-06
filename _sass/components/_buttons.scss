@@ -75,5 +75,13 @@
     &.cta {
         background: $purple;
         color: #fff;
+        font-size: 140%;
+        border: none;
+        &:hover {
+            color: #eee;
+            text-decoration: none;
+            background: $darkpurple;
+            @include background-image( radial-gradient($purple, $darkpurple));
+        }
     }
 }
