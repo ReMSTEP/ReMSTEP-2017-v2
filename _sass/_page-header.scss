@@ -84,6 +84,13 @@
     .vid-wrapper {
         margin: 0;
     }
+    &.small {
+        .page-title {
+            @media only screen and (min-width: em(600)) {
+                position: static;
+            }
+        }
+    }
 }
 @media only screen and (min-width: em(465)) {
     .hero {

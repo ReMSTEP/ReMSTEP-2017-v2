@@ -17,6 +17,9 @@
         padding: 0;
     }
 }
+.row {
+    @include row;
+}
 .span1 {
     @include span-columns(1);
 }
