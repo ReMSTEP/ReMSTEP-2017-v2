@@ -50,17 +50,17 @@ $(document).ready(function () {
         }
 
         // fix on this page menu when scrolls up
-        if($('.on-this-page').length > 0){
-			if (viewportWidth > 600) {
-				if (scrollTop >= (onThisPagePosition.top - headerHeight * 0.7)) {
-					$('.on-this-page').addClass('fixed');
-					$('.on-this-page').css('top', headerHeight);
-				} else {
-					$('.on-this-page').removeClass('fixed');
-					$('.on-this-page').css('top', 'auto');
-				}
-			}
-		}
+        if ($('.on-this-page').length > 0) {
+            if (viewportWidth > 600) {
+                if (scrollTop >= (onThisPagePosition.top - headerHeight * 0.7)) {
+                    $('.on-this-page').addClass('fixed');
+                    $('.on-this-page').css('top', headerHeight);
+                } else {
+                    $('.on-this-page').removeClass('fixed');
+                    $('.on-this-page').css('top', 'auto');
+                }
+            }
+        }
     });
 
     //smooth scroll
@@ -164,7 +164,7 @@ $(document).ready(function () {
     $('.info').click(function (event) {
         event.preventDefault();
         var infoBoxId = $(this).attr('data-infoBoxId');
-        $('#'+infoBoxId).addClass('open');
+        $('#' + infoBoxId).addClass('open');
     });
     $('.info-box-wrapper').click(function () {
         $(this).removeClass('open');
@@ -175,4 +175,26 @@ $(document).ready(function () {
         event.preventDefault();
         $('.full-list').fadeToggle();
     });
+
+    /* activity nav next and previous */
+    if ($('.activity-nav').length > 0) {
+        var prevLink;
+        var nextLink;
+        var activityLis = $('.full-list ul li');
+        $(activityLis).each(function( index ) {
+          if($(this).hasClass('current')){
+              console.log($(activityLis)[index+1]);
+              var prevLi = $(activityLis)[index-1];
+              prevLink = $(prevLi).children('a').attr('href');
+              var nextLi = $(activityLis)[index+1];
+              nextLink = $(nextLi).children('a').attr('href');
+          }
+        });
+        if(prevLink != null) {
+            $('span.prev').replaceWith('<a class="prev" href="'+prevLink+'">&larr; Previous</a>');
+        }
+        if(nextLink != null) {
+            $('span.next').replaceWith('<a class="next" href="'+nextLink+'">Next &rarr;</a>');
+        }
+    }
 });
