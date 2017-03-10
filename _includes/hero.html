@@ -1,15 +1,22 @@
+{% if page.level != 2 %}
 <div class="hero">
     <div class="container">
         <img src="/img/hero-images/{{ page.heroImage }}" alt="">
     </div>
     <div class="page-title wow fadeInDown animated">
-        <div class="container">
-            {% if page.level == 2 %}
-            <p class="h1">{{ page.title }}</p>
-            {% else %}
+        <div class="container">    
             <h1>{{ page.title }}</h1>
-            {% endif %}
             <p class="subheading">{{ page.subTitle }} {% if page.confDate != nil %} - <span>{{ page.confDate }}</span>{% endif %}</p>
         </div>
     </div>
 </div>
+{% else %}
+<div class="small hero">
+    <div class="page-title wow fadeInDown animated">
+        <div class="container">
+            <p class="h1">{{ page.title }}</p>
+            <p class="subheading">{{ page.subTitle }} {% if page.confDate != nil %} - <span>{{ page.confDate }}</span>{% endif %}</p>
+        </div>
+    </div>
+</div>
+{% endif %}

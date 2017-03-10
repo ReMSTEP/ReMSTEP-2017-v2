@@ -43,14 +43,14 @@ a.remstep-logo {
     li {
         list-style: none;
     }
-    ul {
-        display: inline-block;
-    }
     li {
-        display: inline-block;
         margin: 10px 20px 0 0;
         padding-left: 0;
         font-size: 1.2em;
+        ul {
+            font-size: 0.8em;
+            margin-top: 0;
+        }
     }
     a {
         color: $purple;
@@ -135,8 +135,14 @@ a.remstep-logo {
     border: 0;
     padding: 20px 0;
     background: #f1f1f1;
+    &:before {
+        font-family: "fontawesome";
+        content: "\f0c9";
+        opacity: 0.6;
+        margin-right: 3px;
+    }
 }
-@media only screen and (min-width: em(600)) {
+@media only screen and (min-width: em(800)) {
     .site-header {
         position: fixed;
         top: 0;
@@ -146,6 +152,41 @@ a.remstep-logo {
         img:first-child {
             transition: width 1s ease;
             width: 323px;
+        }
+        .site-nav {
+            margin: 2em auto;
+        }
+        .mobile-menu-toggle {
+            display: none;
+        }
+        .main-nav {
+            display: inline;
+            ul, li {
+                display: inline-block;
+            }
+            ul li ul {
+                position: fixed;
+                padding: 0;
+                margin-top: 1em;
+                font-size: 0.8em;
+                transform: translateX(-27%);
+                border-top: 1px solid $purple;
+                &:before {
+                    content: "";
+                    width: 0; 
+                    height: 0; 
+                    border-left: 5px solid transparent;
+                    border-right: 5px solid transparent;
+                    border-bottom: 5px solid $purple;
+                    position: absolute;
+                    top: -5px;
+                    left: 50%;
+                    transform: translateX(-50%);
+                }
+                li:last-child {
+                    margin-right: 0;
+                }
+            }
         }
         &.shrink {
             box-shadow: 0 5px 8px -8px black;
@@ -161,6 +202,15 @@ a.remstep-logo {
                     width: 240px;
                 }
             }
+            .main-nav {
+                ul li ul {
+                    margin-top: 0.5em;
+                    font-size: 0.6em;
+                    li {
+                        margin-top: 3px;
+                    }
+                }
+            }
             .social li {
                 width: 40px;
                 height: 40px;
@@ -171,14 +221,5 @@ a.remstep-logo {
                 }
             }
         }
-    }
-    .site-nav {
-        margin: 2em auto;
-    }
-    .mobile-menu-toggle {
-        display: none;
-    }
-    .main-nav {
-        display: inline;
     }
 }

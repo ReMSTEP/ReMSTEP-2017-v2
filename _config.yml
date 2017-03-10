@@ -4,4 +4,13 @@ defaults:
       path: "" # an empty string here means all files in the project
     values:
       layout: "default"
+      fullTitleTag: "p"
+  -
+    scope:
+      path: "outcomes/activities"
+    values:
+      layout: "activity"
+      title: Activities
+      subTitle: How the outcomes were achieved
+      level: 2
 gems: [bourbon, neat]

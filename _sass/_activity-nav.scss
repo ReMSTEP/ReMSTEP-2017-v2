@@ -7,6 +7,19 @@
     margin: -2em 0 3em 0;
     li {
         list-style: none;
+        a.list:after {
+            display: inline-block;
+            width: 1em;
+            height: 1em;
+            font-family: "fontawesome";
+            content: "\f067";
+            transition: transform 1s;
+            margin-left: 3px;
+        }
+        a.list.open:after {
+            transform: rotate(315deg);
+            transform-origin: center;
+        }
     }
     &> li {
         margin: 0;
@@ -22,13 +35,14 @@
         max-width: 100%;
         left: 0;
         top: 2em;
-        background: $lightgreen;
+        background: rgb(234, 234, 224);
         background: rgba(176, 232, 220, 0.95);
+        box-shadow: 20px 10px rgba(176, 232, 220, 0.95), -20px 10px rgba(176, 232, 220, 0.95), 20px -10px rgba(176, 232, 220, 0.95), -20px -10px rgba(176, 232, 220, 0.95);
         padding: 0;
         margin: 1em 0;
         > li {
             display: block;
-            padding: 0.5em 1em;
+            padding: 0.5em 0;
             margin-top: 1em;
             > a {
                 display: block;
@@ -37,6 +51,7 @@
             }
             ul {
                 padding: 0;
+                margin-top: 1em;
                 @include outer-container;
                 display: flex;
                 flex-wrap: wrap;
@@ -47,7 +62,7 @@
                 margin-top: flex-gutter();
                 margin-bottom: 0;
                 padding: 0;
-                background: rgba(0,0,0,0.1);
+                background: rgba(234, 234, 224, 0.95);
                 &:nth-child(2n) {
                     margin-right: 0;  
                 }
@@ -87,14 +102,30 @@
                 }
             }
         }
-        .red {
-            color: $red;
+        .red,
+        .green,
+        .purple {
+            color: #fff;
+            background: $red;
+            padding: 5px 30px 5px 15px;
+            position: relative;
+            &:before {
+                content: "";
+                width: 0; 
+                height: 0; 
+                border-left: 30px solid transparent;
+                border-right: 0px solid transparent;
+                border-top: 10px solid rgba(176, 232, 220, 1);
+                position: absolute;
+                top: 0;
+                right: 0;
+            }
         }
         .green {
-            color: $green;
+            background: $green;
         }
         .purple {
-            color: $purple;
+            background: $purple;
         }
     }
     &.in-page {
@@ -104,19 +135,17 @@
             z-index: 0;
             display: block;
             background: none;
+            box-shadow: none;
             > li {
-                padding: 0.5em 0;
+                //padding: 0.5em 0;
+            }
+            .red,
+            .green,
+            .purple {
+                &:before {
+                    border-top: 10px solid #fff;
+                }
             }
         }
     }
-    /*&:hover {
-        transition: all 0.5s ease;
-        background: $green;
-        &> li > a {
-            color: #fff;
-        }
-        .full-list {
-            display: block;
-        }
-    }*/
 }

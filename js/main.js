@@ -4,11 +4,21 @@ function loadVideo(videoCode) {
 }
 
 function setTopPadding(viewportWidth, siteHeaderHeight) {
-    if (viewportWidth >= 600) {
+    if (viewportWidth >= 800) {
         $('body').css('padding-top', siteHeaderHeight);
+        $('.main-nav').css('display', 'inline');
     } else {
         $('body').css('padding-top', 0);
     }
+}
+
+function openTab(tab){
+    console.log(tab);
+    $('.tab, .tab-panel').removeClass('selected');
+    $('.tab').attr('aria-selected','false');
+    tab.addClass('selected').attr('aria-selected','true');
+    var tabPanleId = tab.attr('aria-controls');
+    $('.tab-panel[id="'+tabPanleId+'"]').addClass('selected');
 }
 
 $(document).ready(function () {
@@ -25,12 +35,16 @@ $(document).ready(function () {
         $('.main-nav').slideToggle();
     });
 
+    //open specific tab on #
+    var hash = window.location.hash.substr(1);
+    if($('#'+hash).length > 0){
+        var tabId = $('#'+hash).attr('aria-labelledby');
+        openTab($('#'+tabId));
+    }
     // tabs handler
     $('.tab').click(function () {
-        $('.tab, .tab-panel').removeClass('selected');
-        var panelToShow = $(this).attr('aria-controls');
-        $(this).addClass('selected');
-        $('#' + panelToShow).addClass('selected');
+        var tab = $(this);
+        openTab(tab);
     });
 
     var headerHeight;
@@ -51,7 +65,7 @@ $(document).ready(function () {
 
         // fix on this page menu when scrolls up
         if ($('.on-this-page').length > 0) {
-            if (viewportWidth > 600) {
+            if (viewportWidth > 800) {
                 if (scrollTop >= (onThisPagePosition.top - headerHeight * 0.7)) {
                     $('.on-this-page').addClass('fixed');
                     $('.on-this-page').css('top', headerHeight);
@@ -71,8 +85,8 @@ $(document).ready(function () {
             var target = $(this.hash);
             target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
 
-            if (viewportWidth > 600) {
-                scrollPosition = target.offset().top - 260;
+            if (viewportWidth > 800) {
+                scrollPosition = target.offset().top - 180;
             } else {
                 scrollPosition = target.offset().top
             }
@@ -95,7 +109,7 @@ $(document).ready(function () {
         siteHeaderHeight = $('.site-header').height();
         setTopPadding(viewportWidth, siteHeaderHeight);
         // make on this page position static in mobile viewports
-        if (viewportWidth < 600) {
+        if (viewportWidth < 800) {
             $('.on-this-page').removeClass('fixed');
             $('.on-this-page').css('top', 'auto');
         }
@@ -173,6 +187,7 @@ $(document).ready(function () {
     /* activity nav toggle */
     $('.activity-nav .list').click(function (event) {
         event.preventDefault();
+        $(this).toggleClass('open');
         $('.full-list').fadeToggle();
     });
 
