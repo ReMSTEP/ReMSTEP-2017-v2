@@ -12,5 +12,5 @@ defaults:
       layout: "activity"
       title: Activities
       subTitle: How the outcomes were achieved
-      level: 2
+      level: 3
 gems: [bourbon, neat]

@@ -1,4 +1,4 @@
-{% if page.level != 2 %}
+{% if page.level == null %}
 <div class="hero">
     <div class="container">
         <img src="/img/hero-images/{{ page.heroImage }}" alt="">
@@ -14,7 +14,7 @@
 <div class="small hero">
     <div class="page-title wow fadeInDown animated">
         <div class="container">
-            <p class="h1">{{ page.title }}</p>
+            {% if page.level == 2 %}<h1>{{ page.title }}</h1>{% else %}<p class="h1">{{ page.title }}</p>{% endif %}
             <p class="subheading">{{ page.subTitle }} {% if page.confDate != nil %} - <span>{{ page.confDate }}</span>{% endif %}</p>
         </div>
     </div>
