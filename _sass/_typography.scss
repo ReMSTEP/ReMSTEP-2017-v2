@@ -5,16 +5,17 @@ body {
     font-weight: 300;
 }
 h1 {
+    font-family: 'Roboto Slab', Georgia, sans-serif;
     font-size: 2em;
-    font-weight: 300;
+    font-weight: 600;
     color: $green;
     margin: 1em 0 0 0;
     line-height: 1.2;
-    text-transform: uppercase;
 }
 .page-title {
     h1,
     p.h1 {
+        font-family: 'Roboto', 'Helvetica Neue', Arial, Helvetica, sans-serif;
         font-size: 1.8em;
         font-weight: 300;
         color: #444;
