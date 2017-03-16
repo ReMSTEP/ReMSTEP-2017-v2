@@ -1,6 +1,6 @@
 .container {
     @include outer-container;
-    margin: 0 auto;
+    margin: 0 auto 4em auto;
     padding: 0 10px;
     max-width: 1140px;
     &.medium {
