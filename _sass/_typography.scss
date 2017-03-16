@@ -193,6 +193,9 @@ hr {
     }
     li {
         font-size: 1.375em; //22px
+        ul {
+            margin: 1em 0 1em 1em;
+        }
         li {
             font-size: 1em;
         }
@@ -227,6 +230,14 @@ a {
             margin-left: .5em;
             vertical-align: middle;
             border-bottom: none;
+        }
+    }
+    &.goto {
+        &:after {
+            content: "\f054";
+            font-family: FontAwesome;
+            margin-left: .5em;
+            vertical-align: middle;
         }
     }
 }
