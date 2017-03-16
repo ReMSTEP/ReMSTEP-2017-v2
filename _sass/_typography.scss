@@ -32,15 +32,6 @@ h2 {
     margin: 2em 0 0 0;
     color: $purple;
 }
-.large-text h2 {
-    text-align: center;
-    font-family: 'Lemon', cursive;
-    font-weight: 400;
-    font-size: 3em;
-    margin: 2em 0 0.5em 0;
-    color: rgb(240, 217, 0);
-    /*#2c3e50;*/
-}
 h3 {
     color: $green;
     font-weight: 300;
@@ -70,13 +61,6 @@ p {
         margin-top: -0.05em;
     }
 }
-.large-text p {
-    font-size: 1.375em; //22px
-    //line-height: 1.5;
-    &.extra-right-space {
-        margin-right: 29%;
-    }
-}
 ul,
 ol {
     padding: 0 0 0 20px;
@@ -86,6 +70,9 @@ ol {
 li {
     margin-bottom: 0.8em;
     padding-left: 20px;
+    li {
+        font-size: 1em;
+    }
 }
 figure {
     display: inline-block;
@@ -188,6 +175,28 @@ blockquote {
 }
 hr {
     margin: 6em 0;
+}
+.large-text {
+    h2 {
+        text-align: center;
+        font-family: 'Lemon', cursive;
+        font-weight: 400;
+        font-size: 3em;
+        margin: 2em 0 0.5em 0;
+        color: rgb(240, 217, 0);
+    }
+    p {
+        font-size: 1.375em; //22px
+        &.extra-right-space {
+            margin-right: 29%;
+        }
+    }
+    li {
+        font-size: 1.375em; //22px
+        li {
+            font-size: 1em;
+        }
+    }
 }
 
 /*** links ***/
