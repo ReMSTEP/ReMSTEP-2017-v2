@@ -21,3 +21,14 @@
 .cc p {
     margin: 0;
 }
+.back-to-top {
+    display: block;
+    width: 8em;
+    text-align: center;
+    position: relative;
+    top: -1.5em;
+    margin: 0 auto;
+    padding-top: 8px;
+    background: #f3f3f3;
+    border-bottom: 0;
+}
