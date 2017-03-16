@@ -13,4 +13,11 @@ defaults:
       title: Activities
       subTitle: How the outcomes were achieved
       level: 3
+  -
+    scope:
+      path: "outcomes/resources"
+    values:
+      title: Resources
+      subTitle: Teacher resources created as a result of our activities
+      level: 3
 gems: [bourbon, neat]

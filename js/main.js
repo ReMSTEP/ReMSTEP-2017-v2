@@ -35,21 +35,15 @@ $(document).ready(function () {
         $('.main-nav').slideToggle();
     });
 
-    //open specific tab on #
-    var hash = window.location.hash.substr(1);
-    if($('#'+hash).length > 0){
-        var tabId = $('#'+hash).attr('aria-labelledby');
-        openTab($('#'+tabId));
-    }
     // tabs handler
     $('.tab').click(function () {
         var tab = $(this);
         openTab(tab);
     });
 
+    //window scroll handler
     var headerHeight;
     var onThisPagePosition = $('.on-this-page').offset();
-    //window scroll handler
     $(window).on("scroll  touchmove", function () {
 
         var scrollTop = $(document).scrollTop();
