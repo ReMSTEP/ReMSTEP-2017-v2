@@ -232,3 +232,23 @@
         margin-bottom: 1em;
     }
 }
+.twitter {
+    position: relative;
+    padding-left: 48px;
+    &:before {
+        content: "\f099";
+        font-family: "FontAwesome";
+        font-size: 40px;
+        line-height: 20px;
+        color: #905ba1;
+        display: block;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        top: 10px;
+        //right: 0;
+        //bottom: 0;
+        left: 0;
+        //margin: auto;
+    }
+}
