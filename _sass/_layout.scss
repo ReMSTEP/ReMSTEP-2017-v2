@@ -20,48 +20,16 @@
 .row {
     @include row;
 }
-.span1 {
-    @include span-columns(1);
-}
-.span2 {
-    @include span-columns(2);
-}
-.span3 {
-    @include span-columns(3);
-}
-.span4 {
-    @include span-columns(4);
-}
 @media only screen and (min-width: em(600)) {
     .span5 {
         @include span-columns(5);
     }
     .span6, .half {
-
-            @include span-columns(6);
-
+        @include span-columns(6);
     }
     .span7 {
         @include span-columns(7);
     }
-}
-.span8 {
-    @include span-columns(8);
-}
-.span9 {
-    @include span-columns(9);
-}
-.span10 {
-    @include span-columns(10);
-}
-.span11 {
-    @include span-columns(11);
-}
-.span12 {
-    @include span-columns(12);
-}
-.breathing {
-    padding: 4em 0;
 }
 /*** news panels ***/
 .three-max.container {

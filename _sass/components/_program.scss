@@ -43,18 +43,6 @@
             p {
                 margin: 0 0 1em 0;
             }
-
-            .video {
-                width: $five-cols;
-                margin: 0 0 1em $gutter*2;
-                float: right;
-                figure {
-                    margin: 20px 0;
-                }
-            }
         }
-    }
-    figure.vid-wrapper {
-        margin: 20px 0;
     }
 }

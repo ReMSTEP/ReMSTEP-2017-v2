@@ -15,3 +15,43 @@ img,
 iframe {
     max-width: 100%;
 }
+
+/*** links ***/
+
+a {
+    text-decoration: none;
+    color: $linkblue;
+    border-bottom: 1px dotted;
+    &:visited {
+        color: $linkblue;
+    }
+    &:hover {
+        color: $green;
+    }
+    &[rel="external"] {
+        &:after {
+            content: "\f08e";
+            font-family: FontAwesome;
+            margin-left: .5em;
+            vertical-align: middle;
+            font-style: normal;
+        }
+    }
+    &.info {
+        &:after {
+            content: "\f05a";
+            font-family: FontAwesome;
+            margin-left: .5em;
+            vertical-align: middle;
+            border-bottom: none;
+        }
+    }
+    &.goto {
+        &:after {
+            content: "\f054";
+            font-family: FontAwesome;
+            margin-left: .5em;
+            vertical-align: middle;
+        }
+    }
+}
