@@ -1,0 +1,107 @@
+table {
+    table-layout: fixed;
+    margin: 3em 0;
+    th, td {
+        vertical-align: top;
+        text-align: left;
+        padding: 1.8em 0.5em;
+        border: 1px solid #fff;
+        background: $lightgreen;
+        &.highlight {
+            background: #FDEEED;
+        }
+        &.semi-highlight {
+            background: linear-gradient(to right, #FDEEED, $lightgreen);
+        }
+    }
+    th { 
+        text-align: center;
+    }
+    td {
+        width: 15%;
+        &[colspan="2"] {
+            width: 30%;
+        }
+    }
+    tfoot {
+        
+        td {
+            padding: 0 0 0 4em;
+            p {
+                font-size: 14/16*1em;
+            }
+        }
+    }
+}
+.row.table {
+    position: relative;
+    overflow-x: scroll;
+    table {
+        min-width: 640px;
+        max-width: 980px;
+        margin: 3em 0 3em auto;
+        position: relative;
+        z-index: 2;
+        &.unselected {
+            &:after {
+                content: "";
+                position: absolute;
+                z-index: 3;
+                top: 0;
+                bottom: 0;
+                right: 0;
+                left: 0;
+                background: rgba(0,0,0,0.5);
+            }
+        }
+    }
+    .spec-details {
+        width: 400px;
+        max-width: 95vw;
+        background: $lightgreen;
+        position: absolute;
+        z-index: 1;
+        top: 1.5em;
+        padding: 0 1.4em;
+        padding-top: 1em;
+        @media only screen and (min-width: em(1000)) {
+            padding-top: 0;
+        }
+        &:before {
+            content: "Notes";
+            font-size: 1em;
+            color: #fff;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            text-align: center;
+            z-index: 2;
+            @media only screen and (min-width: em(1000)) {
+                display: none;
+            }
+        }
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(0,0,0,0.5);
+        }
+        &.selected {
+            z-index: 3;
+            &:before { 
+                content: "Close x";
+                color: $darkgreen;
+            }
+            &:after {
+                display: none;
+            }
+        }
+        ul {
+            margin-left: 0;
+        }
+    }
+}

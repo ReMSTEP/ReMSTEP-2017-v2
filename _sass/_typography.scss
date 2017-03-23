@@ -82,6 +82,13 @@ li {
 figure {
     display: inline-block;
     margin: 1em 0;
+    &.block {
+        display: block;
+        margin: 3em 0;
+        figcaption {
+            text-align: right;
+        }
+    }
 }
 figcaption {
     font-size: 0.875em;
@@ -128,8 +135,8 @@ b {
 blockquote {
     quotes: "\201C""\201D""\2018""\2019";
     margin: 4em 0 4em auto;
-    width: 55%;
     min-width: 320px;
+    max-width: 620px;
     img {
         float: right;
         border-radius: 50%;
@@ -141,6 +148,7 @@ blockquote {
     p {
         margin: 0 0 0.2em 0;
         padding-bottom: 0.5em;
+        padding-left: 2em;
         color: $purple;
         font-size: 1.6em;
         font-style: italic;
@@ -165,10 +173,12 @@ blockquote {
         }
     }
     footer {
+        margin-left: 4em;
+        padding-top: 4px;
         border-top: 1px solid $purple;
         color: $purple;
         text-align: right;
-        font-size: 12/16*1em;
+        font-size: 14/16*1em;
         font-style: normal;
         font-weight: 500;
         cite {

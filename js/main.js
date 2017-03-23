@@ -13,7 +13,7 @@ function setTopPadding(viewportWidth, siteHeaderHeight) {
 }
 
 function openTab(tab){
-    console.log(tab);
+    //console.log(tab);
     $('.tab, .tab-panel').removeClass('selected');
     $('.tab').attr('aria-selected','false');
     tab.addClass('selected').attr('aria-selected','true');
@@ -192,7 +192,7 @@ $(document).ready(function () {
         var activityLis = $('.full-list ul li');
         $(activityLis).each(function( index ) {
           if($(this).hasClass('current')){
-              console.log($(activityLis)[index+1]);
+              //console.log($(activityLis)[index+1]);
               var prevLi = $(activityLis)[index-1];
               prevLink = $(prevLi).children('a').attr('href');
               var nextLi = $(activityLis)[index+1];
@@ -206,4 +206,12 @@ $(document).ready(function () {
             $('span.next').replaceWith('<a class="next" href="'+nextLink+'">Next &rarr;</a>');
         }
     }
+    
+    /* spec notes/table click */
+    $('.spec-details').click(function (event) {
+       $(this).toggleClass('selected').next('table').toggleClass('unselected'); 
+    });
+    $('.spec-details + table').click(function (event) {
+       $(this).toggleClass('unselected').prev('.spec-details').toggleClass('selected'); 
+    });
 });
