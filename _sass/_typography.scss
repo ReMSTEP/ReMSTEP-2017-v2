@@ -7,7 +7,7 @@ body {
 h1 {
     font-family: 'Roboto Slab', Georgia, sans-serif;
     font-size: 2em;
-    font-weight: 600;
+    font-weight: 300;
     color: $green;
     margin: 1em 0 0 0;
     line-height: 1.2;
@@ -54,7 +54,7 @@ p {
         color: $lightgreen;
         float: left;
         font-family: 'Roboto Slab', Georgia;
-        font-weight: 600;
+        font-weight: 300;
         font-size: 4.75em;
         line-height: 0.99;
         padding-top: 0px;
@@ -133,6 +133,7 @@ b {
     }
 }
 blockquote {
+    position: relative;
     quotes: "\201C""\201D""\2018""\2019";
     margin: 4em 0 4em auto;
     min-width: 320px;
@@ -158,12 +159,17 @@ blockquote {
             color: $purple;
             font-size: 4em;
             line-height: 0.1em;
-            margin-right: 0.25em;
-            margin-left: -0.6em;
+            /*margin-right: 0.25em;
+            margin-left: -0.6em;*/
             vertical-align: -0.4em;
             font-family: impact, sans-serif;
             opacity: 0.3;
             overflow: visible;
+            position: absolute;
+            top: 20px;
+            left: -5px;
+            width: 1em;
+            height: 1em;
         }
         
         &:after {
