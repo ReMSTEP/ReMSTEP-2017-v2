@@ -179,10 +179,11 @@ $(document).ready(function () {
     });
 
     /* activity nav toggle */
-    $('.activity-nav .list').click(function (event) {
+    $('.activity-nav .list, .overlay').click(function (event) {
         event.preventDefault();
         $(this).toggleClass('open');
         $('.full-list').fadeToggle();
+        $('.overlay').fadeToggle();
     });
 
     /* activity nav next and previous */
