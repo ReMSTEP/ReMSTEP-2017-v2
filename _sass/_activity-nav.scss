@@ -59,7 +59,7 @@
             li {
                 @include span-columns(6);
                 text-align: center;
-                margin-top: flex-gutter();
+                margin-top: 1.6em;
                 margin-bottom: 0;
                 padding: 0;
                 background: rgba(234, 234, 224, 0.95);
