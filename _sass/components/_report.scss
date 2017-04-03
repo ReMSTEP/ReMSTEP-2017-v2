@@ -1,5 +1,5 @@
 .report {
-    @include span-columns(3);
+    max-width: 265px;
     border: 1px solid #eee;
     margin-top: 1em;
     margin-bottom: 1em;
@@ -14,5 +14,23 @@
     }
     .content {
         padding: 0.5em;
+    }
+}
+.activity-learn-more {
+    @media only screen and (min-width: em(600)) {
+        .report {
+            @include span-columns(3 of 9);
+        }
+        .video {
+            @include span-columns(6 of 9);
+        }
+    }
+    @media only screen and (min-width: em(900)) {
+        .report {
+            @include span-columns(3);
+        }
+        .video {
+            @include span-columns(6);
+        }
     }
 }
