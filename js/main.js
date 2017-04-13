@@ -182,6 +182,7 @@ $(document).ready(function () {
     $('.activity-nav .list, .overlay').click(function (event) {
         event.preventDefault();
         $(this).toggleClass('open');
+        $('.activity-nav').toggleClass('open');
         $('.full-list').fadeToggle();
         $('.overlay').fadeToggle();
     });

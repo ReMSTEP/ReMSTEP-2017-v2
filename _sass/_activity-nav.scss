@@ -1,11 +1,13 @@
 .activity-nav {
     position: relative;
-    z-index: 1200;
     max-width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 0;
     margin: -2em 0 3em 0;
+    &.open {
+        z-index: 1200;
+    }
     li {
         list-style: none;
         a.list:after {
