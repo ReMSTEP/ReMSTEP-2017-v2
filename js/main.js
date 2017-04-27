@@ -1,8 +1,3 @@
-function loadVideo(videoCode) {
-    var youTubeVid = '<iframe width="560" height="315" src="//www.youtube.com/embed/' + videoCode + '?rel=0&autoplay=1" frameborder="0" allowfullscreen></iframe>';
-    $('.video-box .vid, .video-box iframe').replaceWith(youTubeVid);
-}
-
 function setTopPadding(viewportWidth, siteHeaderHeight) {
     if (viewportWidth >= 800) {
         $('body').css('padding-top', siteHeaderHeight);
@@ -107,21 +102,6 @@ $(document).ready(function () {
             $('.on-this-page').removeClass('fixed');
             $('.on-this-page').css('top', 'auto');
         }
-    });
-
-    /* video play list */
-    //video select handler
-    $('.video-select').hover(function () {
-        $(this).addClass('hovered').next().show();
-    });
-    $('.video-menu').mouseleave(function () {
-        $('.video-menu ul').hide().prev().removeClass('hovered');
-    });
-    //video select handler
-    $('.video-playlist').on('click', 'a', function (event) {
-        event.preventDefault();
-        var videoCode = $(this).attr('data-video-code');
-        loadVideo(videoCode);
     });
 
     /* slide show */
