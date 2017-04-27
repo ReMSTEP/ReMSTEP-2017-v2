@@ -1,6 +1,7 @@
 .activity-nav {
     position: relative;
     max-width: 100%;
+    display: -ms-flexbox; /* for ie10 */
     display: flex;
     justify-content: space-between;
     padding: 0;
