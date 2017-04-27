@@ -1,6 +1,7 @@
 .page-summary {
     background: #FDEEED;
     margin: 1em 0 4em 0;
+    display: -ms-flexbox; /* for ie10 */
     display: flex;
     flex-wrap: wrap;
     &> div {
